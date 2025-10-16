@@ -1,0 +1,11 @@
+type User {
+    id: String!
+    name: String!
+    email: String! @goField(forceResolver: true)
+    createdAt: String!
+    updatedAt: String!
+}
+
+type Query {
+    me: User!
+}
