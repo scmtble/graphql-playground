@@ -65,7 +65,7 @@ func NewGraphqlHandler() fiber.Handler {
 }
 
 func NewPlaygroundHandler() fiber.Handler {
-	return adaptor.HTTPHandler(playground.Handler("GraphQL playground", "/graphql"))
+	return adaptor.HTTPHandler(playground.ApolloSandboxHandler("GraphQL playground", "/graphql"))
 }
 
 func main() {
