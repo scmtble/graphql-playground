@@ -1,7 +1,7 @@
 type User {
     id: String!
     name: String!
-    email: String! @goField(forceResolver: true)
+    email: String!
     createdAt: String!
     updatedAt: String!
 }

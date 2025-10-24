@@ -14,21 +14,15 @@ import (
 // Me is the resolver for the me field.
 func (r *queryResolver) Me(ctx context.Context) (*model.User, error) {
 	return &model.User{
-		ID:   "1",
-		Name: "scmtble",
+		ID:        "1",
+		Name:      "John Doe",
+		Email:     "me@gmail.com",
+		CreatedAt: "2023-01-01T00:00:00Z",
+		UpdatedAt: "2023-01-01T00:00:00Z",
 	}, nil
-}
-
-// Email is the resolver for the email field.
-func (r *userResolver) Email(ctx context.Context, obj *model.User) (string, error) {
-	return "me@scmtble.dev", nil
 }
 
 // Query returns generated.QueryResolver implementation.
 func (r *Resolver) Query() generated.QueryResolver { return &queryResolver{r} }
 
-// User returns generated.UserResolver implementation.
-func (r *Resolver) User() generated.UserResolver { return &userResolver{r} }
-
 type queryResolver struct{ *Resolver }
-type userResolver struct{ *Resolver }
