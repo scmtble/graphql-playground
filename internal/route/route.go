@@ -7,7 +7,7 @@ import (
 
 var Module = fx.Module("route",
 	fx.Provide(
-		AsRoute(NewPingHandler),
+		AsRoute(NewHealthHandler),
 		AsRoute(NewGraphqlHandler),
 		AsRoute(NewPlaygroundHandler),
 	),
